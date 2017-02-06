@@ -6,9 +6,15 @@ magnetic field, the spins form domains and at higher temperatures, the spins are
 Curie temperature). Hysteresis effect can also be observed by applying a magnetic field in one direction, getting
 all spins aligned and then trying to align it back with opposite magnetic field.
 
+## Demo
+
 ## Usage
 
-## Demo
+### Windows
+* make sure SDL2.dll is in path or in same folder as the executable
+
+### Linux
+
 
 ## To-do
 * make Makefile work with both win and linux
