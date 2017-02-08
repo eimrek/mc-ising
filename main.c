@@ -19,7 +19,7 @@
  *
  */
 
-#include <SDL2\SDL.h>
+#include <SDL2/SDL.h>
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -73,7 +73,8 @@ bool init() {
 			success = false;
 		} else {
 			//Create renderer for window
-			gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
+			//gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
+			gRenderer = SDL_CreateRenderer(gWindow, -1, 0);
 			if (gRenderer == NULL) {
 				printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
 				success = false;
@@ -209,8 +210,8 @@ bool handleEvents(SDL_Event e) {
 void printHelp() {
 	printf("Command line parameters: \n");
 	printf("    main.exe <rows> <columns> \n");
-	printf("    <rows> - atom resolution in y direction (default: 70) \n");
-	printf("    <columns> - atom resolution in x direction (default: 70) \n");
+	printf("    <rows> - atom resolution in y direction (default: %d) \n", rows);
+	printf("    <columns> - atom resolution in x direction (default: %d) \n", cols);
 
 	printf("Keyboard shortcuts: \n");
 	printf("    UP - increases temperature \n");
@@ -233,6 +234,8 @@ void printHelp() {
 
 int main(int argc, char* args[]) {
 
+	printHelp();
+
 	// Parse command line arguments (resolution data)
 	if (argc != 1)
 		if (argc != 3) {
@@ -242,7 +245,6 @@ int main(int argc, char* args[]) {
 			cols = atoi(args[2]);
 		}
 
-	printHelp();
 
 	srand(time(NULL));
 
