@@ -49,7 +49,7 @@ SDL_Renderer* gRenderer = NULL; 	//The window renderer
 
 
 bool init();	//Starts up SDL and creates window
-void close();	//Frees media and shuts down SDL
+void freeAndClose();	//Frees media and shuts down SDL
 
 void renderState(int rows, int cols, char state[rows][cols]); 		//Draws the current spin state
 bool transitionState(int rows, int cols, char state[rows][cols]);	//Makes a single spin transition
@@ -60,7 +60,7 @@ bool init() {
 	bool success = true;
 
 	//Initialize SDL
-	if (SDL_Init( SDL_INIT_VIDEO) < 0) {
+	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		printf("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
 		success = false;
 	} else {
@@ -103,7 +103,7 @@ void renderState(int rows, int cols, char state[rows][cols]) {
 
 }
 
-void close() {
+void freeAndClose() {
 //Destroy window
 	SDL_DestroyRenderer(gRenderer);
 	SDL_DestroyWindow(gWindow);
@@ -293,7 +293,7 @@ int main(int argc, char* args[]) {
 	}
 
 	//Free resources and close SDL
-	close();
 
+	freeAndClose();
 	return 0;
 }

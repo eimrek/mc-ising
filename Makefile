@@ -16,7 +16,7 @@ else
 endif
 
 CFLAGS = -std=c99 -O3 $(XCFLAGS)
-LFLAGS = -lSDL2main -lSDL2 $(XLFLAGS)
+LFLAGS = $(XLFLAGS) -lSDL2main -lSDL2 
 
 build: main
 
