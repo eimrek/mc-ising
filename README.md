@@ -11,7 +11,7 @@ all spins aligned and then trying to align it back with opposite magnetic field.
 ## Usage
 
 ### Windows
-* install SDL2 and write it's position to Makefile on line `SDL2_PATH = `
+* install SDL2 and write its position to Makefile on line `SDL2_PATH = `
 * to run the application, make sure SDL2.dll is in path or in same folder as the executable
 
 ### Linux
