@@ -16,7 +16,3 @@ all spins aligned and then trying to align it back with opposite magnetic field.
 
 ### Linux
 * Make sure SDL2 is installed where gcc can find it (e.g. in `/usr/include` & `/usr/lib`)
-
-## To-do
-* draw parameters on screen
-* add demo gif to readme
